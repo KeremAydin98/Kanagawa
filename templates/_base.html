@@ -3,7 +3,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <p><img class="bookcover" src="{% static 'images/flag_of_kanagawa.png' %}"> | KANAGAWA</p>
+        <p><img class="bookcover" src="{% static 'images/flag_of_kanagawa.png' %}"> | <a href="{% url 'home' %}">KANAGAWA</a></p>
     </head>
     <body>
         <h1>{% block title %}{% endblock title %}</h1>

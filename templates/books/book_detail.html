@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h2>{{book.title}}</h2>
+
+<div>
+    <p>Author: {{book.author}}</p>
+    <p>Price: ${{book.price}}</p><br>
+    <button type="submit">Buy</button>
+</div>
+
+{% endblock content %}
