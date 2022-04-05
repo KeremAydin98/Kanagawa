@@ -1,18 +1,20 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
-        <title>KANAGAWA</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <p><img class="bookcover" src="{% static 'images/flag_of_kanagawa.png' %}"> | KANAGAWA</p>
     </head>
     <body>
         <h1>{% block title %}{% endblock title %}</h1>
         <div>
             {% if user.is_authenticated %}
                 <div>
-                    <p><a href="{% url 'logout' %}">Logout</a></p>
+                    <p><a href="{% url 'account_logout' %}">Logout</a></p>
                 </div>
             {% else %}
                 <div>
-                    <p><a href="{% url 'login' %}">Login</a> | <a href="{% url 'signup' %}">Signup</a></p>
+                    <p><a href="{% url 'account_login' %}">Login</a> | <a href="{% url 'account_signup' %}">Signup</a></p>
                 </div>
             {% endif %}
 

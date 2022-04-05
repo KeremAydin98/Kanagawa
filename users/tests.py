@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from django.urls import reverse_lazy
+from django.urls import reverse
 
 class CustomUserTests(TestCase):
 
@@ -38,9 +38,12 @@ class CustomUserTests(TestCase):
 
 class SignUpPageTests(TestCase):
 
+    username = 'test123'
+    email = 'testuser@email.com'
+
     def setUp(self):
 
-        self.response = self.client.get(reverse_lazy('signup'))
+        self.response = self.client.get(reverse('account_signup'))
 
     def test_signup_status_code(self):
 
@@ -48,7 +51,7 @@ class SignUpPageTests(TestCase):
 
     def test_signup_template_used(self):
 
-        self.assertTemplateUsed(self.response, 'registration/signup.html')
+        self.assertTemplateUsed(self.response, 'account/signup.html')
 
     def test_signup_contains(self):
 
