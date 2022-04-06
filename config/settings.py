@@ -126,6 +126,9 @@ USE_I18N = True
 USE_TZ = True
 
 
+# --------------------- Added ---------------
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -143,7 +146,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# --------------------- Added ---------------
+
 # For custom user
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -159,3 +162,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
+# For media files
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

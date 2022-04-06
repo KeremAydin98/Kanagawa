@@ -2,6 +2,11 @@ h2 {
     color: blue;
 }
 
+.symbol {
+    height: 30px;
+    width: auto;
+}
+
 .bookcover {
     height: 300px;
     width: auto;
