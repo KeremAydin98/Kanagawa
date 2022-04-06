@@ -4,6 +4,9 @@
     <head>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <p><img class="symbol" src="{% static 'images/flag_of_kanagawa.png' %}"> | <a href="{% url 'home' %}">KANAGAWA</a></p>
+        <form action="{% url 'search_results' %}" method="get">
+            <input name="q" type="text" placeholder="Search" aria-label="Search">
+        </form>
     </head>
     <body>
         <h1>{% block title %}{% endblock title %}</h1>
