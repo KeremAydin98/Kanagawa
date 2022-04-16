@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="center">
+    <div>
+        <h2>Update Book</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update</button>
+        </form>
+        <a href="{% url 'book_delete' book.pk %}"><button type="submit">Delete</button></a><br>
+    </div>
+</div>
+{% endblock content %}

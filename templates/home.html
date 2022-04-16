@@ -4,5 +4,16 @@
 {% block title %}HomePage{% endblock title %}
 
 {% block content %}
-    <h2>This is the homepage</h2>
+    <div class="home__container">
+        <div class="home__items">
+            <a href="#"><img class="home__item thick-red-border " src="{% static 'images/instrument.png' %}"></a>
+        </div>
+        <div class="home__items">
+            <a href="#"><img class="home__item thick-red-border" src="{% static 'images/movies.jpg' %}"></a>
+        </div>
+        <div class="home__items">
+            <a href="{% url 'book_list' %}"><img class="home__item thick-red-border" src="{% static 'images/books.png' %}"></a>
+        </div>
+    </div>
+
 {% endblock content %}

@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
-    <head>
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <p><img class="symbol" src="{% static 'images/flag_of_kanagawa.png' %}"> | <a href="{% url 'home' %}">KANAGAWA</a></p>
-        <form action="{% url 'search_results' %}" method="get">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+<header class="header">
+    <div class="header__titles">
+        <a href="{% url 'home' %}"><img class="symbol" src="{% static 'images/title.png' %}"></a>
+        <a class="header__about" href="#"><h2>About</h2></a>
+        <a class="header__about" href="{% url 'book_list' %}"><h2>Books</h2></a>
+        <a class="header__about" href="#"><h2>Movies</h2></a>
+        <a class="header__about" href="#"><h2>Instruments</h2></a>
+    </div>
+    <div class="header__items">
+        <form class="" action="{% url 'search_results' %}" method="get">
             <input name="q" type="text" placeholder="Search" aria-label="Search">
+            <button type="submit" class="button1">Search</button>
         </form>
-    </head>
-    <body>
-        <h1>{% block title %}{% endblock title %}</h1>
-        <div>
-            {% if user.is_authenticated %}
-                <div>
-                    <p><a href="{% url 'account_logout' %}">Logout</a></p>
-                </div>
-            {% else %}
-                <div>
-                    <p><a href="{% url 'account_login' %}">Login</a> | <a href="{% url 'account_signup' %}">Signup</a></p>
-                </div>
-            {% endif %}
+        {% if user.is_authenticated %}
+        <div class="header__items__logout">
+            <a href="#">
+                <img class="profile" src="{% static 'images/profile.jpg' %}">
+            </a>
+            |
+            <a class="text-red" href="{% url 'account_logout' %}"><h2>Logout</h2></a></div>
+        {% else %}
+        <a class="text-red" href="{% url 'account_login' %}"><h2>Login</h2></a> | <a class="text-red" href="{% url 'account_signup' %}"><h2>SignUp</h2></a>
+        {% endif %}
+    </div>
 
-            {% block content %} {% endblock content %}
+</header>
 
-        </div>
-    </body>
+{% block content %}
+{% endblock content %}
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
 </html>
 
 

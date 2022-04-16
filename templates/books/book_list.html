@@ -1,17 +1,25 @@
 {% extends '_base.html' %}
 {% load static %}
-
 {% block content %}
-<h2>Book List</h2>
-<ol>
-    {% for book in book_list %}
-    <li>
-        <h3><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h3>
-        <p>Author: {{ book.author }}</p><br>
-        {% if book.cover %}
-            <img class="bookcover" src="{{book.cover.url}}" alt="{{book.title}}">
-        {% endif %}
-    </li>
-    {% endfor %}
-</ol>
+<link rel="stylesheet" href="{% static 'css/books.css' %}">
+
+<div class="books-page">
+    <div class="books-header">
+        <h2>Book List</h2>
+        <a href="{% url 'book_new' %}">+New</a><br>
+    </div>
+    <div class="books-container">
+        {% for book in book_list %}
+        <div class="books">
+            <h3><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h3>
+            <p>Author: {{ book.author }}</p><br>
+            {% if book.cover %}
+                <img class="bookcover" src="{{book.cover.url}}" alt="{{book.title}}">
+            {% else %}
+                <img class="bookcover" src="{% static 'images/no_cover.jpeg' %}">
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

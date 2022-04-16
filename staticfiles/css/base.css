@@ -1,14 +1,34 @@
+
 h2 {
-    color: blue;
+    color: red;
 }
 
 .symbol {
-    height: 30px;
+    height: 60px;
     width: auto;
 }
 
 .bookcover {
-    height: 300px;
-    width: auto;
+    height: 600px;
+    width: 450px;
 }
 
+.container {
+  display: flex; /* or inline-flex */
+}
+
+.thick-red-border {
+    border-color: red;
+    border-width: 2px;
+    border-style: double;
+    border-radius: 10px;
+  }
+
+.button1 {
+    background-color: #f44336;
+}
+
+.profile {
+    height: 30px;
+    width: 30px;
+}

@@ -3,16 +3,19 @@
 
 
 {% block content %}
-<h2>{{book.title}}</h2>
-<head>
-    <body>
+<div class="center">
+    <div>
+        <h2>{{book.title}}</h2>
         <div>
             {% if book.cover %}
                 <img class="bookcover" src="{{book.cover.url}}" alt="{{book.title}}">
+            {% else %}
+                <img class="bookcover" src="{% static 'images/no_cover.jpeg' %}">
             {% endif %}
             <p>Author: {{book.author}}</p>
             <p>Price: ${{book.price}}</p><br>
-        <button type="submit">Buy</button>
+        <button type="submit">Buy</button><br>
+        <a href="{% url 'book_update' book.pk %}"><button type="submit">Update</button></a><br>
         </div>
 
         <div>
@@ -21,10 +24,8 @@
                 <p>{{ comment.author }}: {{comment.comment}}</p>
             {% endfor %}
         </div>
-
-    </body>
-
-</head>
+    </div>
+</div>
 
 
 
