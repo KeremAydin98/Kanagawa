@@ -11,7 +11,7 @@
 .home__container{
     display: flex;
     margin-top: 50px;
-    margin-left: 20%;
+    margin-left: 0%;
     margin-right: auto;
     width: 100%;
     flex-direction: row;
@@ -47,8 +47,8 @@
 }
 
 .home__item {
-    height: 600px;
-    width: 450px;
+    height: 1200px;
+    width: 900px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
