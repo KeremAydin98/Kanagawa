@@ -11,13 +11,15 @@
     <div class="books-container">
         {% for book in book_list %}
         <div class="books">
-            <h3><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h3>
-            <p>Author: {{ book.author }}</p><br>
-            {% if book.cover %}
-                <img class="bookcover" src="{{book.cover.url}}" alt="{{book.title}}">
-            {% else %}
-                <img class="bookcover" src="{% static 'images/no_cover.jpeg' %}">
-            {% endif %}
+            <fieldset class="book-page">
+                <legend><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></legend>
+                <p>Author: {{ book.author }}</p><br>
+                {% if book.cover %}
+                    <img class="bookcover" src="{{book.cover.url}}" alt="{{book.title}}">
+                {% else %}
+                    <img class="bookcover" src="{% static 'images/no_cover.jpeg' %}">
+                {% endif %}
+            </fieldset>
         </div>
         {% endfor %}
     </div>

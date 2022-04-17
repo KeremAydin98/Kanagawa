@@ -10,12 +10,10 @@
 
 .home__container{
     display: flex;
-    margin-top: 50px;
-    margin-left: 0%;
-    margin-right: auto;
+    margin:auto;
     width: 100%;
+    height: 100%;
     flex-direction: row;
-    align-items: center;
 
 }
 
@@ -29,7 +27,10 @@
 
 }
 
+.background_gradient {
+    background: linear-gradient(45deg, red, pink, white);
 
+}
 .home__center{
 
     margin:auto;
@@ -73,9 +74,12 @@
   }
 
 button {
-    background-color: #f44336;
+    background-color: white;
 }
 
+button:hover {
+    background-color: red;
+}
 .profile {
     height: 30px;
     width: 30px;
