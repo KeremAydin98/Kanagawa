@@ -13,7 +13,7 @@
         <div class="books">
             <fieldset class="book-page">
                 <legend><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></legend>
-                <p>Author: {{ book.author }}</p><br>
+                <legend>Author: {{ book.author }}</legend><br>
                 {% if book.cover %}
                     <img class="bookcover" src="{{book.cover.url}}" alt="{{book.title}}">
                 {% else %}

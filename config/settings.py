@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG',default=0))
 
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1' ]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -89,8 +89,8 @@ DATABASES = {
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432
+        'HOST': '172.27.0.2',
+        'PORT': 5432,
     }
 }
 
