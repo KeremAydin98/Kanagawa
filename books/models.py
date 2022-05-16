@@ -66,26 +66,22 @@ class Recommends(models.Model):
     model_knn = NearestNeighbors(metric='cosine', algorithm='brute')
     model_knn.fit(df_matrix)
 
-    def get_recommends(book,df_pivot=df_pivot, model_knn=model_knn):
+    def get_recommends(self,book,df_pivot=df_pivot, model_knn=model_knn):
         index = df_pivot.transpose().columns.get_loc(book)
         distances, indices = model_knn.kneighbors(df_pivot.iloc[index, :].values.reshape(1, -1), n_neighbors=6)
 
-        recommended_books = []
+        self.recommended_books = []
 
         for i in range(len(distances.flatten())):
-            recommended_books.append(df_pivot.index[indices.flatten()[i]])
+            self.recommended_books.append(df_pivot.index[indices.flatten()[i]])
 
-        return recommended_books
+        return self.recommended_books
 
-    id = models.ForeignKey(
+    title = models.ForeignKey(
         Book,
         on_delete=models.CASCADE,
         related_name='recommends'
     )
-
-    book = Book()
-
-    recommended = get_recommends(book=str(book.title))
 
     def __str__(self):
 

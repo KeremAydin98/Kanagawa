@@ -79,7 +79,7 @@ body {
 }
 
 .button {
-  background-color: #FC1818; /* Green */
+  background-color: #FC1818;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -87,6 +87,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin-top: 5px;
 }
 
 button:hover {
@@ -167,6 +168,16 @@ button:hover {
 
 .middle {
     display:flex;
-    margin-top: 200px;
+    margin: 150px 400px 0px 400px;
+    border: 2px solid #FC1818;
+    border-radius: 10px;
+    padding: 50px;
     justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+a {
+    color: #FC1818;
+    text-decoration: inherit;
+}
+
