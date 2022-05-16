@@ -6,23 +6,31 @@
 <div class="center">
     <div>
         <h2>{{book.title}}</h2>
+        <h3>Author: {{book.author}}</h3>
         <div>
             {% if book.cover %}
                 <img class="bookcover" src="{{book.cover.url}}" alt="{{book.title}}">
+
             {% else %}
                 <img class="bookcover" src="{% static 'images/no_cover.jpeg' %}">
             {% endif %}
-            <p>Author: {{book.author}}</p>
             <p>Price: ${{book.price}}</p><br>
-        <button type="submit">Buy</button><br>
-        <a href="{% url 'book_update' book.pk %}"><button type="submit">Update</button></a><br>
+        <button class="button" type="submit">Buy</button>
+        <a href="{% url 'book_update' book.pk %}"><button class="button" type="submit">Update</button></a><br>
         </div>
 
         <div>
             <h3>Comments</h3>
-            {% for comment in book.comments.all %}
-                <p>{{ comment.author }}: {{comment.comment}}</p>
-            {% endfor %}
+            {% if comment %}
+                {% for comment in book.comments.all %}
+                    <p>{{ comment.author }}: {{comment.comment}}</p>
+                {% endfor %}
+            {% else %}
+                <p>There is no comment on this book</p>
+            {% endif %}
+        </div>
+        <div>
+            <h3>If you liked this book, then you would also like</h3>
         </div>
     </div>
 </div>

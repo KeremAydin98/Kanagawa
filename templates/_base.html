@@ -5,9 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/books.css' %}">
 </head>
 <body>
 <header class="header">
@@ -21,7 +20,7 @@
     <div class="header__items">
         <form class="" action="{% url 'search_results' %}" method="get">
             <input name="q" type="text" placeholder="Search" aria-label="Search">
-            <button type="submit" class="button1">Search</button>
+            <button id="base_button" type="submit" class="button1">Search</button>
         </form>
         {% if user.is_authenticated %}
         <div class="header__items__logout">
@@ -36,10 +35,9 @@
     </div>
 
 </header>
-<div class="content">
+
     {% block content %}
     {% endblock content %}
-</div>
 </body>
 
 <footer class="footer5">&copy 2022 Kerem Aydın</footer>

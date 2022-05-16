@@ -13,14 +13,29 @@ services:
             - 8000:8000
         depends_on:
             - db
+        networks:
+            static-network:
+                ipv4_address: 172.18.1.2
+        
     db:
         image: postgres:11
         environment:
             - "POSTGRES_HOST_AUTH_METHOD=trust"
         volumes:
             - postgres_data:/var/lib/postgresql/data/
+            - /home/kerem/Desktop/book-crossings/
         ports:
             - 5050:80
+        networks:
+            static-network:
+                ipv4_address: 172.18.0.2
+            
+networks:
+    static-network:
+        ipam:
+            config:
+                - subnet: 172.18.0.0/16
+                    
         
 volumes:
     postgres_data:
