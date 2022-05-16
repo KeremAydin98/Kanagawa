@@ -1,7 +1,7 @@
 # Kanagawa
 
 I have designed a simple e-commerce website using Django, html, css and Postgresql. The database and virtual environment is stored inside a Docker container.
-The website consists of three sections: books, songs, movies. Songs and movies sections are currently empty. The web 
+The website consists of three sections: books, songs, movies. Songs and movies sections are currently empty.
 
 ## Home Screen 
 
